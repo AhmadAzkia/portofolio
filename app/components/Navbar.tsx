@@ -1,31 +1,56 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
+import { HiHome } from 'react-icons/hi'
+import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 export const Navbar = () => {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-indigo-600">
-              Portfolio
+    <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 backdrop-blur-md rounded-full shadow-lg px-8 py-3 flex items-center justify-between max-w-3xl bg-indigo-600 backdrop-blur-md">
+      <div className="flex items-center gap-6">
+        {!isHomePage && (
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link href="/" className="text-gray-200 hover:text-white transition">
+              <HiHome className="w-6 h-6" />
             </Link>
-          </div>
-          <div className="flex items-center space-x-8">
-            <Link href="#about" className="text-gray-600 hover:text-indigo-600 transition-colors">
-              About
-            </Link>
-            <Link href="#projects" className="text-gray-600 hover:text-indigo-600 transition-colors">
-              Projects
-            </Link>
-            <Link href="#skills" className="text-gray-600 hover:text-indigo-600 transition-colors">
-              Skills
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-indigo-600 transition-colors">
-              Contact
-            </Link>
-          </div>
-        </div>
+          </motion.div>
+        )}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+        >
+          <Link href="/about" className="text-gray-200 hover:text-white transition">About</Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+        >
+          <Link href="/projects" className="text-gray-200 hover:text-white transition">Projects</Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+        >
+          <Link href="/skills" className="text-gray-200 hover:text-white transition">Skills</Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+        >
+          <Link href="/contact" className="text-gray-200 hover:text-white transition">Contact</Link>
+        </motion.div>
       </div>
     </nav>
   )
