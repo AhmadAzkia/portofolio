@@ -28,28 +28,28 @@ export const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
-          <Link href="/about" className="text-gray-200 hover:text-white transition">Certification</Link>
+          <Link href="/certification" className="text-gray-200 hover:text-white transition">Certification</Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          <Link href="/projects" className="text-gray-200 hover:text-white transition">Skills</Link>
+          <Link href="/skills" className="text-gray-200 hover:text-white transition">Skills</Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
         >
-          <Link href="/skills" className="text-gray-200 hover:text-white transition">Chatroom</Link>
+          <Link href="/chatroom" className="text-gray-200 hover:text-white transition">Chatroom</Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4 }}
         >
-          <Link href="/contact" className="text-gray-200 hover:text-white transition">About</Link>
+          <Link href="/about" className="text-gray-200 hover:text-white transition">About</Link>
         </motion.div>
       </div>
     </nav>
